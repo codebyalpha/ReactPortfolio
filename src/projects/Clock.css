@@ -1,0 +1,133 @@
+.clockContainer {
+    /* background-color: var(--primary); */
+    height: 100%;
+    width: 100%;
+}
+
+.clockrow {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    font-size: 4vh;
+    color: red;
+    position: relative;
+    box-shadow: 0 17px 100px var(--primary);
+}
+
+.clockmid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2vh;
+    width: 2vh;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.clocksec {
+    position: absolute;
+    top: 14%;
+    left: 49.5%;
+    background-color: red;
+    height: 45%;
+    width: 1%;
+    transform: rotate(330deg);
+    transform-origin: 50% 80%;
+    z-index: 9;
+}
+
+.clockmint {
+    position: absolute;
+    top: 10%;
+    left: 49%;
+    background-color: white;
+    border-radius: 20px;
+    height: 40%;
+    width: 1.5%;
+    transform-origin: 50% 100%;
+}
+
+.clockhour {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: white;
+    height: 200px;
+    width: 1.5px;
+    transform-origin: right bottom;
+}
+
+.T12 {
+    position: absolute;
+    top: 0;
+    left: 47%;
+}
+
+.T1 {
+    position: absolute;
+    top: 7%;
+    left: 71%;
+}
+
+.T2 {
+    position: absolute;
+    top: 24%;
+    left: 88%;
+}
+
+.T3 {
+    position: absolute;
+    top: 45%;
+    left: 94%;
+}
+
+.T4 {
+    position: absolute;
+    top: 69%;
+    left: 88%;
+}
+
+.T5 {
+    position: absolute;
+    top: 85%;
+    left: 71%;
+}
+
+.T6 {
+    position: absolute;
+    top: 91%;
+    left: 49%;
+}
+
+.T7 {
+    position: absolute;
+    top: 85%;
+    left: 26%;
+}
+
+.T8 {
+    position: absolute;
+    top: 68%;
+    left: 8%;
+}
+
+.T9 {
+    position: absolute;
+    top: 46%;
+    left: 2%;
+}
+
+.T10 {
+    position: absolute;
+    top: 24%;
+    left: 8%;
+}
+
+.T11 {
+    position: absolute;
+    top: 8%;
+    left: 24%;
+}

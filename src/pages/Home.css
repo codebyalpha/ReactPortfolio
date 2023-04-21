@@ -1,0 +1,233 @@
+.Homecontainer {
+    width: 100%;
+    background-color: var(--secondary);
+}
+
+.homerow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: 100vh;
+}
+
+.homeintro {
+    color: var(--primary);
+    background-color: var(--secondary);
+    display: grid;
+    place-items: center;
+    width: 80%;
+}
+
+.homeintro .iconify {
+    font-size: 40px;
+    color: var(--primary);
+    /* transform: rotate(0 deg); */
+    animation: hello 2s linear 2s infinite normal;
+    transform-origin: bottom right;
+    margin: 0 10px;
+}
+
+@keyframes hello {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+    }
+
+    33% {
+        transform: rotate(-20deg);
+        transform-origin: bottom;
+    }
+
+    66% {
+        transform: rotate(20deg);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+    }
+}
+
+.homeintro p {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.homeintro p span {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0 5px;
+}
+
+
+.homeintro .profile {
+    color: var(--primary);
+    font-size: 44px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.homeimage {
+    background-color: black;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.introhead {
+    color: var(--primary);
+    background-color: var(--secondary);
+    text-align: center;
+    font-size: 40px;
+    width: 90%;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.section2 {
+    background-color: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60vh;
+    width: 90%;
+    margin: auto;
+
+}
+
+.section2 .col {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+/* .section2 .col>img {
+    height: ;
+} */
+
+.avtar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.avtar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.introbody div i {
+    color: var(--intro);
+}
+
+.introbody div p {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.socailconnection {
+    height: 30vh;
+    text-align: center;
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.socailconnection h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.socailconnection h3 span {
+    color: var(--intro);
+}
+
+.socailconnection .socialicons .iconify {
+    margin: 2vh 10px;
+    font-size: 30px;
+    color: var(--primary);
+    background-color: var(--secondary);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.socailconnection .socialicons .iconify:hover {
+    transform: rotate(360deg);
+    transition: 0.5s ease all;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 667px) {
+
+    .Homecontainer {
+        margin-top: 0;
+    }
+
+    .homerow {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .homeimage {
+        flex-basis: 50%;
+    }
+
+    .homeintro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 40%;
+    }
+
+    .homeintro .profile {
+        font-size: 30px;
+    }
+
+    .section2 {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .section2 .col>img {
+        height: 70%;
+    }
+
+    .avtar img {
+        width: 70%;
+        height: 70%;
+    }
+
+    .introbody div p {
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .socailconnection {
+        height: 25vh;
+        margin-top: 40px;
+    }
+
+    .socailconnection h1 {
+        font-size: 34px;
+        margin: 10px;
+    }
+
+    .introhead {
+        font-size: 30px;
+    }
+}

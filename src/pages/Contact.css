@@ -1,0 +1,155 @@
+.contactcontainer {
+    background-color: var(--secondary);
+    width: 100%;
+    margin: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.contactgif .col img {
+    /* background-color: var(--primary); */
+    width: 90%;
+    object-fit: cover;
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.contactrow .col {
+    margin: 20px;
+    display: grid;
+}
+
+.contactrow .col label {
+    color: var(--primary);
+    font-weight: 600;
+    padding: 5px;
+}
+
+.contactrow .col input {
+    height: 50px;
+    width: 40vw;
+}
+
+.contactrow .col input,
+.contactrow .col textarea {
+    width: 40vw;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    color: var(--primary);
+    background-color: var(--secondary);
+    border: 1.5px solid var(--primary);
+    scale: 1;
+    transition: 0.3s ease-in scale;
+}
+
+.contactrow .col input:focus,
+.contactrow .col textarea:focus {
+    border: 1.5px solid var(--intro);
+    font-weight: 500;
+    scale: 1.05;
+    transition: 0.3s ease-in scale;
+}
+
+.contactrow .col input:focus::placeholder,
+.contactrow .col input:focus,
+.contactrow .col input:focus:placeholder-shown,
+.contactrow .col textarea:focus::placeholder,
+.contactrow .col textarea:focus,
+.contactrow .col textarea:focus:placeholder-shown {
+    color: var(--intro);
+}
+
+::placeholder {
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.btnstyle {
+    background-color: var(--secondary);
+    color: var(--primary);
+    outline: none;
+    border: 1.5px solid var(--primary);
+    padding: 6px 18px;
+    font-size: 22px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.3s ease-in all;
+    width: fit-content;
+}
+
+.btnstyle:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    transition: 0.3s ease-in all;
+}
+
+.contactgif .contact .col .iconify {
+    font-size: 25px;
+    color: var(--secondary);
+    margin: 0 0 0 7px;
+}
+
+.contactgif .contact .col {
+    background-color: var(--primary);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+}
+
+.contactgif .contact .col:hover a {
+    color: var(--intro);
+}
+
+.contactgif .contact .col a {
+    text-decoration: none;
+    color: var(--primary);
+    margin-left: 10px;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 667px) {
+
+    .contactcontainer {
+        grid-template-columns: auto;
+    }
+
+    .contactrow .col input,
+    .contactrow .col textarea {
+        width: 85vw;
+        padding: 10px;
+    }
+
+    .contactgif .contact {
+        display: grid;
+        place-items: center;
+        width: 50vw;
+    }
+
+    .contactgif .contact .col {
+        height: 30px;
+        width: 30px;
+        margin: 5px;
+    }
+
+    .contactgif .contact .col .iconify {
+        font-size: 20px;
+        color: var(--secondary);
+        margin: 0 0 0 5px;
+    }
+
+    .contactgif .contact .col a {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}

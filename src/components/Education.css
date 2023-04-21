@@ -1,0 +1,55 @@
+.educontainer {
+    width: 90%;
+    margin: 20px auto;
+    background-color: var(--secondary);
+}
+
+.educontainer h1 {
+    color: var(--primary);
+}
+
+.educationdetail {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin: 30px 0;
+    color: var(--primary);
+}
+
+.educationintro {
+    margin-left: 20px;
+}
+
+.educationintro h2 {
+    font-size: 28px;
+}
+
+.educationlogo {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 667px) {
+
+    .educontainer h1 {
+        font-size: 28px;
+    }
+
+    .educationlogo img {
+        width: 100px;
+    }
+
+    .educationintro h2 {
+        font-size: 15px;
+    }
+
+    .educationintro h3 {
+        font-size: 14px;
+    }
+
+    .educationdetail {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin: 40px 0;
+    }
+
+}

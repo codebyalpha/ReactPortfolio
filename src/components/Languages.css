@@ -1,0 +1,63 @@
+.lancontainer {
+    background-color: var(--secondary);
+    padding: 20px 0;
+}
+
+.lanrow {
+    width: 130px;
+    height: 160px;
+    display: grid;
+    grid-template-rows: 60% 40%;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.4s ease all;
+
+}
+
+.lanrow:hover {
+    box-shadow: 0px 5px 50px -10px var(--intro);
+    border-radius: 10px;
+    transition: 0.4s ease-in-out all;
+    scale: 1.2;
+}
+
+.lanicon {
+    font-size: 60px;
+}
+
+.lanname {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.lancontainer:hover {
+    scale: 1.1;
+}
+
+@media screen and (max-width: 667px) {
+
+    .lanrow {
+        width: 50px;
+        height: 100px;
+        justify-content: center;
+    }
+
+    .lanrow:hover {
+        box-shadow: none;
+        border-radius: none;
+        transition: none;
+        scale: none;
+    }
+
+    .lanicon {
+        font-size: 40px;
+    }
+
+    .lanname {
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+}

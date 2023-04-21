@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Montserrat:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 350px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+  --textfont: 18px;
+  --smooth: 0.3s ease;
+  --intro: #8A4CA8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--secondary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.sticky-mode-changer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 5px 10px;
+  font-size: 40px;
   color: white;
+  border: 1px solid white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonstyle {
+  outline: none;
+  border: 1px solid var(--primary);
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--smooth) scale;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonstyle:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
+  transition: 0.3s ease all;
 }
