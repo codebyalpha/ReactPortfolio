@@ -14,6 +14,9 @@ function Clock() {
 
   useEffect(() => {
     setHour(new Date().getHours());
+    if (hour > 12) {
+      setHour(hour - 12);
+    }
   }, [mint]);
 
   const arr = [
@@ -32,12 +35,13 @@ function Clock() {
   ];
 
   const chnageStyle: any = {
-    color: "white",
+    color: "black",
     scale: "1.3",
-    border: "1px solid red",
+    border: "2px solid red",
     borderRadius: "50%",
     padding: "1px 5px",
     zIndex: "999",
+    backgroundColor: "white",
   };
 
   return (
@@ -62,6 +66,7 @@ function Clock() {
           className="clockmint"
           style={{ transform: `rotate(${eval(mint) * 6}deg)` }}
         ></Row>
+        <h2 className="clocklogo">ALPHA</h2>
       </Row>
     </Container>
   );

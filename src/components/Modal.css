@@ -1,0 +1,42 @@
+.Modalcontainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* filter: blur(1px); */
+}
+
+.modalrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 45vw;
+  border-radius: 30px;
+  background-color: white;
+  border: 1.5px solid black;
+  z-index: 9;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.closeicon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 667px) {
+  .modalrow {
+    height: 55%;
+    width: 98%;
+    padding: 20px 0;
+  }
+}
