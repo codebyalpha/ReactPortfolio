@@ -1,45 +1,44 @@
 .footercontainer {
-    min-height: 5vh;
-    height: fit-content;
-    background-color: black;
-    display: grid;
-    align-items: center;
-    text-align: center;
+  min-height: 5vh;
+  height: fit-content;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  text-align: center;
 }
 
 .footerrow {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    width: 90%;
-    margin: auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 90%;
+  margin: auto;
 }
 
 .fsocialicons {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .fsocialicons .iconify {
-    margin: 0 10px;
-    font-size: 20px;
-    color: white;
-    transform: rotate(0deg);
-    cursor: pointer;
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+  transform: rotate(0deg);
+  cursor: pointer;
 }
 
 .fsocialicons .iconify:hover {
-    transform: rotate(360deg);
-    transition: 0.5s ease all;
+  transform: rotate(360deg);
+  transition: 0.5s ease all;
 }
 
 @media screen and (max-width: 667px) {
-    .footerrow {
-        flex-direction: column;
-        font-size: 10px;
-    }
+  .footerrow {
+    flex-direction: column;
+    font-size: 10px;
+  }
 
-    .fsocialicons {
-        display: none;
-    }
-
+  .fsocialicons {
+    display: none;
+  }
 }

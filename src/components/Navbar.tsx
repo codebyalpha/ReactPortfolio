@@ -46,6 +46,7 @@ function Navbar(props: ChildProps) {
     { name: "Project", to: "/project" },
     { name: "About", to: "/about" },
     { name: "Contact us", to: "/contact" },
+    { name: "test", to: "/test" },
   ];
 
   const active = {
@@ -69,6 +70,7 @@ function Navbar(props: ChildProps) {
             return (
               <li>
                 <Link
+                  key={item.name}
                   to={item.to}
                   onClick={() => menuchange(item.name)}
                   style={item.name == activeTab ? active : undefined}

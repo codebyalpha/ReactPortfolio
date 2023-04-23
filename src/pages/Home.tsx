@@ -7,6 +7,7 @@ import avtar from "../image/avatar.svg";
 import "./Home.css";
 import { Icon } from "@iconify/react";
 import { Link, useNavigate } from "react-router-dom";
+import Weather from "../projects/Weather/Weather";
 
 function Home(props: any) {
   // const navigate = useNavigate();
@@ -91,6 +92,7 @@ function Home(props: any) {
           <Icon icon="line-md:linkedin" />
         </Col>
       </Row>
+      <Weather />
     </Container>
   );
 }

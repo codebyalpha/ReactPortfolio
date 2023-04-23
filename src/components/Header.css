@@ -1,71 +1,70 @@
 .hcontainer {
-    width: 100%;
-    background-color: var(--secondary);
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    border-bottom: 0.3px solid var(--primary);
+  width: 100%;
+  background-color: var(--secondary);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  border-bottom: 0.3px solid var(--primary);
 }
 
 .hrow {
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    position: sticky;
-    top: 0;
-    height: 10vh;
-    align-items: center;
-    background-color: var(--secondary);
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  align-items: center;
+  background-color: var(--secondary);
 }
 
 .logo {
-    position: relative;
-    color: var(--primary);
-    font-size: 40px;
-    padding: 2px 5px;
+  position: relative;
+  color: var(--primary);
+  font-size: 40px;
+  padding: 2px 5px;
 }
 
 .logo::after {
-    background: var(--primary);
-    color: var(--intro);
-    content: 'ALPHA';
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 2px 5px;
-    -webkit-clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
-    clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
-    animation: slide 4s 1s linear infinite;
+  background: var(--primary);
+  color: var(--intro);
+  content: "ALPHA";
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 5px;
+  -webkit-clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+  animation: slide 4s 1s linear infinite;
 }
 
 @keyframes slide {
-    50% {
-        -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%);
-    }
+  50% {
+    -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%);
+  }
 }
 
 @media screen and (max-width: 667px) {
+  .logo {
+    font-size: 30px;
+  }
 
-    .logo {
-        font-size: 30px;
-    }
+  .hamburger {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 30px;
+    height: fit-content;
+    z-index: 99;
+  }
 
-    .hamburger {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        width: 30px;
-        height: fit-content;
-        z-index: 99;
-    }
-
-    .hamburger div {
-        width: 100%;
-        height: 3px;
-        margin: 7px 0;
-        border-radius: 10px;
-        background-color: var(--primary);
-    }
+  .hamburger div {
+    width: 100%;
+    height: 3px;
+    margin: 7px 0;
+    border-radius: 10px;
+    background-color: var(--primary);
+  }
 }

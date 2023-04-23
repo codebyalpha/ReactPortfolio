@@ -13,10 +13,9 @@ function Clock() {
   }, 1000);
 
   useEffect(() => {
-    setHour(new Date().getHours());
-    if (hour > 12) {
-      setHour(hour - 12);
-    }
+    new Date().getHours() > 12
+      ? setHour(new Date().getHours() - 12)
+      : setHour(new Date().getHours());
   }, [mint]);
 
   const arr = [
@@ -35,13 +34,9 @@ function Clock() {
   ];
 
   const chnageStyle: any = {
-    color: "black",
-    scale: "1.3",
-    border: "2px solid red",
-    borderRadius: "50%",
-    padding: "1px 5px",
+    color: "white",
+    scale: "1.4",
     zIndex: "999",
-    backgroundColor: "white",
   };
 
   return (

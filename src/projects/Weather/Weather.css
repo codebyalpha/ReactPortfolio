@@ -1,0 +1,136 @@
+.wcontainer {
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+}
+
+.weather {
+  background-image: url(../Weather/sunshineday.webp);
+  background-position: 100% 100%;
+  background-size: cover;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+}
+
+.weather img {
+  object-fit: cover;
+  object-position: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.weather h1 {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.wsearch {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.weather input {
+  display: block;
+  font-size: 22px;
+  outline: none;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 15px 15px;
+  width: 40vw;
+}
+
+.weather button {
+  font-size: 22px;
+  margin: 10px 0;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.wintro {
+  width: 90%;
+  margin: 5vh auto;
+  border-left: 5px solid skyblue;
+}
+
+.wintro .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wintro .container div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+  width: 80%;
+  align-items: center;
+}
+
+.wintro div h3 {
+  white-space: nowrap;
+}
+
+.managecities {
+  position: absolute;
+  background-color: #fff;
+  max-height: 200px;
+  width: 400px;
+  overflow: scroll;
+  z-index: 1;
+  border: 1.5px solid black;
+  box-shadow: 0px 15px 100px black;
+}
+
+.managecities li {
+  list-style-type: none;
+  padding: 0 5px;
+  font-size: 22px;
+}
+
+.managecities li:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.wintrosimple {
+  width: 90%;
+  background-color: rgba(135, 207, 235, 0.382);
+}
+
+@media screen and (max-width: 667px) {
+  .wsearch {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .weather input {
+    width: 100%;
+  }
+  .managecities {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .managecities li {
+    font-size: 16px;
+  }
+  .wintrosimple {
+    width: 100%;
+  }
+  .wintro .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wintro .container div div {
+    width: 95%;
+  }
+}

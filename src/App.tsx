@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import About from "./pages/About";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
+import Weather from "./projects/Weather/Weather";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/test" element={<Weather />} />
         </Route>
       </Routes>
     </BrowserRouter>

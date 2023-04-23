@@ -8,7 +8,7 @@
   height: 100%;
   width: 100%;
   background-color: black;
-  border: 2px solid var(--secondary);
+  border: 2px solid red;
   border-radius: 50%;
   font-size: 4vh;
   color: red;
@@ -138,6 +138,6 @@
   bottom: 25%;
   left: 50%;
   transform: translate(-50%, -30%);
-  color: red;
+  color: white;
   z-index: 1;
 }
