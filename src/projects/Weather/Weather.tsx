@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Weather.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { Icon } from "@iconify/react";
+import { transform } from "typescript";
 
 function Weather() {
   const [inputVal, setinputVal] = useState("");
@@ -9,6 +10,7 @@ function Weather() {
   const [data, setData] = useState([]);
   const [finalData, setFinalData] = useState([]);
   const [displayLi, setDisplayLi] = useState(false);
+  const [visible, setvisible] = useState(true);
 
   useEffect(() => {
     // search cities
@@ -61,6 +63,7 @@ function Weather() {
   };
 
   const searchWeather = async (val: string) => {
+    setvisible(false);
     let apikey = "a96d8e353b2b1a81a3bb7b1f8ba875de";
     let arr: any = [];
     const response = await fetch(
@@ -69,6 +72,7 @@ function Weather() {
     const jsonData = await response.json();
     arr.push(jsonData);
     setFinalData(arr);
+    setvisible(true);
   };
   return (
     <>
@@ -105,7 +109,7 @@ function Weather() {
           {finalData.map((item: any) => {
             let icon = item.weather[0].icon;
             var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
-            return (
+            return visible ? (
               <Container>
                 <div className="wintrosimple">
                   <Row>
@@ -144,15 +148,7 @@ function Weather() {
                         justifyContent: "flex-end",
                       }}
                     >
-                      {item.weather[0].mains == "sunny" ? (
-                        <Icon icon="fluent:weather-sunny-high-24-regular" />
-                      ) : item.weather[0].mains == "rain" ? (
-                        <Icon icon="bi:cloud-lightning-rain-fill" />
-                      ) : item.weather[0].mains == "snow" ? (
-                        <Icon icon="carbon:snow-blizzard" />
-                      ) : (
-                        <Icon icon="mdi:weather-cloudy-alert" />
-                      )}
+                      <img src={iconurl} alt="" width={"100px"} />
                     </Col>
                   </Row>
                 </div>
@@ -160,12 +156,12 @@ function Weather() {
                   <div>
                     <h4>Current Weather </h4>
                     <h4>{new Date().toLocaleTimeString()}</h4>
-                    <img
+                    {/* <img
                       src={iconurl}
                       alt=""
                       width={"20%"}
                       style={{ marginLeft: "0", display: "block" }}
-                    />
+                    /> */}
                   </div>
                   <div>
                     <h4>Location</h4>
@@ -177,14 +173,72 @@ function Weather() {
                   </div>
                   <div>
                     <h4>Visibility</h4>
-                    <h4>4 Km</h4>
+                    <h4>{item.visibility / 1000} Km</h4>
                   </div>
                   <div>
                     <h4>Pressure</h4>
                     <h4>{item.main.pressure} mbar</h4>
                   </div>
+                  <div>
+                    <h4>Wind Direction</h4>
+                    <h4>
+                      <Icon
+                        icon="mdi:arrow-up-thin"
+                        fontSize={"40px"}
+                        style={{
+                          transform: `rotate(${item.wind.deg}deg)`,
+                          justifySelf: "center",
+                        }}
+                      />
+                      {item.wind.deg > 11.25 && item.wind.deg < 33.75
+                        ? "NNE"
+                        : item.wind.deg > 33.75 && item.wind.deg < 56.25
+                        ? "NE"
+                        : item.wind.deg > 56.25 && item.wind.deg < 78.75
+                        ? "ENE"
+                        : item.wind.deg > 78.75 && item.wind.deg < 101.25
+                        ? "E"
+                        : item.wind.deg > 101.25 && item.wind.deg < 123.75
+                        ? "ESE"
+                        : item.wind.deg > 123.75 && item.wind.deg < 146.25
+                        ? "SSE"
+                        : item.wind.deg > 146.25 && item.wind.deg < 168.75
+                        ? "S"
+                        : item.wind.deg > 168.75 && item.wind.deg < 191.25
+                        ? "SSW"
+                        : item.wind.deg > 191.25 && item.wind.deg < 213.75
+                        ? "SW"
+                        : item.wind.deg > 213.75 && item.wind.deg < 236.25
+                        ? "WSW"
+                        : item.wind.deg > 236.25 && item.wind.deg < 258.75
+                        ? "W"
+                        : item.wind.deg > 258.75 && item.wind.deg < 281.25
+                        ? "WNW"
+                        : item.wind.deg > 281.25 && item.wind.deg < 326.25
+                        ? "NW"
+                        : item.wind.deg > 326.25 && item.wind.deg < 348.75
+                        ? "NNW"
+                        : item.wind.deg > 348.75 || item.wind.deg < 11.75
+                        ? "N"
+                        : ""}
+                    </h4>
+                  </div>
                 </div>
               </Container>
+            ) : (
+              <div
+                style={{
+                  height: "40vh",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Icon
+                  icon="eos-icons:bubble-loading"
+                  fontSize={"50px"}
+                  color="skyblue"
+                />
+              </div>
             );
           })}
         </Col>
