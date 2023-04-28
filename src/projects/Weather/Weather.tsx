@@ -3,6 +3,7 @@ import "./Weather.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 import { transform } from "typescript";
+import weather from "../../image/Weather-Forecast-Black.png";
 
 function Weather() {
   const [inputVal, setinputVal] = useState("");
@@ -11,6 +12,7 @@ function Weather() {
   const [finalData, setFinalData] = useState([]);
   const [displayLi, setDisplayLi] = useState(false);
   const [visible, setvisible] = useState(true);
+  var arr: any = [];
 
   useEffect(() => {
     // search cities
@@ -37,18 +39,24 @@ function Weather() {
       let long = position.coords.longitude;
       let apikey = "a96d8e353b2b1a81a3bb7b1f8ba875de";
 
-      fetch(
+      await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apikey}`
       )
         .then((res) => res.json())
         .then((json) => {
-          console.log(json);
+          arr.push(json);
+          setFinalData(arr);
+          setvisible(true);
         });
     }
   }, []);
 
   const searchByCity = async (val: any) => {
-    setDisplayLi(true);
+    if (val != "") {
+      setDisplayLi(true);
+    } else {
+      setDisplayLi(false);
+    }
     setinputVal(val);
     let data = cities.filter((item: any) => {
       if (item.city.toLowerCase().startsWith(inputVal)) return item.city;
@@ -65,26 +73,36 @@ function Weather() {
   const searchWeather = async (val: string) => {
     setvisible(false);
     let apikey = "a96d8e353b2b1a81a3bb7b1f8ba875de";
-    let arr: any = [];
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${val}&appid=${apikey}`
     );
     const jsonData = await response.json();
-    arr.push(jsonData);
-    setFinalData(arr);
-    setvisible(true);
+    if (jsonData.cod == 200) {
+      arr.push(jsonData);
+      setFinalData(arr);
+      setvisible(true);
+    } else {
+      alert(jsonData.message);
+      setvisible(true);
+    }
   };
   return (
     <>
       <Container className="wcontainer">
         <Row className="weather">
-          <h1>Weather</h1>
+          {/* <h1>Weather</h1> */}
+          <div className="content">
+            <h2>Weather</h2>
+            <h2>Weather</h2>
+          </div>
+
           <Row className="wsearch">
             <Col>
               <input
                 type="text"
                 value={inputVal}
                 placeholder="Search City..."
+                autoComplete="false"
                 onChange={(e) => searchByCity(e.target.value)}
               />
 
@@ -100,7 +118,14 @@ function Weather() {
                   );
                 })}
               </ul>
-              {/* <button onClick={() => searchWeather(inputVal)}>Search</button> */}
+              <button onClick={() => searchWeather(inputVal)}>Search</button>
+            </Col>
+            <Col>
+              <img
+                src={weather}
+                alt=""
+                style={{ width: "22vw", height: "32vh", overflow: "visible" }}
+              />
             </Col>
           </Row>
         </Row>
@@ -137,7 +162,7 @@ function Weather() {
                           {Math.floor(item.main.temp_max - 268.15)}℃
                         </h3>
                         <h3 style={{ alignSelf: "start" }}>
-                          Wind: {item.wind.speed} km/hr{" "}
+                          Wind: {eval(item.wind.speed) * 5} km/hr{" "}
                         </h3>
                       </div>
                     </Col>
@@ -156,12 +181,6 @@ function Weather() {
                   <div>
                     <h4>Current Weather </h4>
                     <h4>{new Date().toLocaleTimeString()}</h4>
-                    {/* <img
-                      src={iconurl}
-                      alt=""
-                      width={"20%"}
-                      style={{ marginLeft: "0", display: "block" }}
-                    /> */}
                   </div>
                   <div>
                     <h4>Location</h4>

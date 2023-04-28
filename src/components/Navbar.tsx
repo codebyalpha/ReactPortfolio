@@ -46,7 +46,6 @@ function Navbar(props: ChildProps) {
     { name: "Project", to: "/project" },
     { name: "About", to: "/about" },
     { name: "Contact us", to: "/contact" },
-    { name: "test", to: "/test" },
   ];
 
   const active = {

@@ -92,7 +92,6 @@ function Home(props: any) {
           <Icon icon="line-md:linkedin" />
         </Col>
       </Row>
-      <Weather />
     </Container>
   );
 }
