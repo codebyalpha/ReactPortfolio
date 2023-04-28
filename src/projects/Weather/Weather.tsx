@@ -71,19 +71,23 @@ function Weather() {
   };
 
   const searchWeather = async (val: string) => {
-    setvisible(false);
-    let apikey = "a96d8e353b2b1a81a3bb7b1f8ba875de";
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${val}&appid=${apikey}`
-    );
-    const jsonData = await response.json();
-    if (jsonData.cod == 200) {
-      arr.push(jsonData);
-      setFinalData(arr);
-      setvisible(true);
+    if (val != "") {
+      setvisible(false);
+      let apikey = "a96d8e353b2b1a81a3bb7b1f8ba875de";
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${val}&appid=${apikey}`
+      );
+      const jsonData = await response.json();
+      if (jsonData.cod == 200) {
+        arr.push(jsonData);
+        setFinalData(arr);
+        setvisible(true);
+      } else {
+        alert(jsonData.message);
+        setvisible(true);
+      }
     } else {
-      alert(jsonData.message);
-      setvisible(true);
+      alert("Plase enter city name");
     }
   };
   return (

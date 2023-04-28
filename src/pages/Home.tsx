@@ -21,22 +21,13 @@ function Home(props: any) {
             I'm <span> SHARAD</span>
           </p>
           <p className="profile">Front End Developer</p>
-          <Col style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-            <button
-              className="DownloadBtn"
-              // onClick={() => navigate("/about")}
+          <Col>
+            <a
+              href="https://drive.google.com/u/0/uc?id=1o7pWu_ulZX2GqY6BBgJUSWO0z9vB4W3p&export=download"
+              className="buttonDownload"
             >
-              {" "}
               Download CV
-            </button>
-            <Col>
-              {/* <button
-                className="buttonstyle btn"
-                onClick={() => navigate("/contact")}
-              >
-                Hire Me
-              </button> */}
-            </Col>
+            </a>
           </Col>
         </Col>
         <Col className="homeimage">

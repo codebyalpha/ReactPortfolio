@@ -85,23 +85,36 @@
   position: relative;
 }
 
-.weather input {
+.weather .col input {
   display: block;
   font-size: 22px;
   outline: none;
   border-radius: 5px;
-  border-color: transparent;
+  border: 1px solid black;
   padding: 15px 15px;
   width: 40vw;
 }
 
-.weather button {
+.weather .col input::placeholder {
+  opacity: 0.3;
+  color: black;
+}
+
+.wsearch .col button {
   font-size: 22px;
   margin: 10px 0;
   padding: 5px 12px;
   cursor: pointer;
-  border-radius: 10px;
-  border-color: transparent;
+  /* border-radius: 10px; */
+  background-color: #fff;
+  border: 1px solid black;
+  transition: 0.3s ease all;
+}
+
+.wsearch .col button:hover {
+  box-shadow: 0 4px 13px black;
+  transform: translateY(-5px);
+  transition: 0.3s ease all;
 }
 
 .wintro {

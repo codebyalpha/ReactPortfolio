@@ -166,23 +166,88 @@
   margin-top: 10px;
 }
 
-.DownloadBtn {
-  padding: 8px 15px;
-  font-size: 20px;
-  color: var(--primary);
-  background-color: var(--secondary);
-  border: 1px solid var(--primary);
+.buttonDownload {
+  display: inline-block;
   position: relative;
-  overflow: visible;
+  padding: 10px 25px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-align: center;
+  text-indent: 15px;
+  border: 1px solid var(--intro);
+  margin-top: 1em;
+  transition: 0.4s ease all;
 }
 
-.DownloadBtn::before {
+.buttonDownload:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+  content: " ";
+  display: block;
   position: absolute;
-  bottom: 10px;
-  left: 20px;
-  height: 5px;
-  background-color: red;
-  width: 20px;
+  left: 15px;
+  top: 52%;
+}
+
+.buttonDownload:before {
+  width: 10px;
+  height: 2px;
+  border-style: solid;
+  border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  margin-top: -7px;
+
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: transparent;
+  border-top-color: inherit;
+
+  animation: downloadArrow 2s linear infinite;
+  animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+  border-color: var(--intro);
+}
+
+.buttonDownload:hover:after {
+  border-top-color: var(--intro);
+  animation-play-state: running;
+}
+
+/* keyframes for the download icon anim */
+@keyframes downloadArrow {
+  /* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
+  0% {
+    margin-top: -7px;
+    opacity: 1;
+  }
+
+  0.001% {
+    margin-top: -15px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 667px) {
