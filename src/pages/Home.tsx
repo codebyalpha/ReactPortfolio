@@ -23,19 +23,19 @@ function Home(props: any) {
           <p className="profile">Front End Developer</p>
           <Col style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <button
-              className="buttonstyle btn"
+              className="DownloadBtn"
               // onClick={() => navigate("/about")}
             >
               {" "}
-              Know More...
+              Download CV
             </button>
             <Col>
-              <button
+              {/* <button
                 className="buttonstyle btn"
-                // onClick={() => navigate("/contact")}
+                onClick={() => navigate("/contact")}
               >
                 Hire Me
-              </button>
+              </button> */}
             </Col>
           </Col>
         </Col>
@@ -86,10 +86,22 @@ function Home(props: any) {
           Feel free to <span> connect </span> with me
         </h3>
         <Col className="socialicons">
-          <Icon icon="line-md:twitter" />
-          <Icon icon="line-md:facebook" />
-          <Icon icon="line-md:instagram" />
-          <Icon icon="line-md:linkedin" />
+          {/* <Icon icon="line-md:twitter" /> */}
+          <Link
+            to="https://www.facebook.com/profile.php?id=100008568757483"
+            target="_blank"
+          >
+            <Icon icon="line-md:facebook" />
+          </Link>
+          <Link to="https://www.instagram.com/i.am_sharad/" target="_blank">
+            <Icon icon="line-md:instagram" />
+          </Link>
+          <Link
+            to="https://www.linkedin.com/public-profile/settings"
+            target="_blank"
+          >
+            <Icon icon="line-md:linkedin" />
+          </Link>
         </Col>
       </Row>
     </Container>

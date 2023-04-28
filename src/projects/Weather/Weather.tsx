@@ -105,18 +105,21 @@ function Weather() {
                 autoComplete="false"
                 onChange={(e) => searchByCity(e.target.value)}
               />
-
               <ul
                 className="managecities"
                 style={displayLi ? { display: "block" } : { display: "none" }}
               >
-                {data.map((item: any) => {
-                  return (
-                    <li key={item.city} onClick={() => setByLiTag(item.city)}>
-                      {item.city}
-                    </li>
-                  );
-                })}
+                {data.length != 0 ? (
+                  data.map((item: any) => {
+                    return (
+                      <li key={item.city} onClick={() => setByLiTag(item.city)}>
+                        {item.city}
+                      </li>
+                    );
+                  })
+                ) : (
+                  <li>City not Found</li>
+                )}
               </ul>
               <button onClick={() => searchWeather(inputVal)}>Search</button>
             </Col>
@@ -162,7 +165,7 @@ function Weather() {
                           {Math.floor(item.main.temp_max - 268.15)}℃
                         </h3>
                         <h3 style={{ alignSelf: "start" }}>
-                          Wind: {eval(item.wind.speed) * 5} km/hr{" "}
+                          Wind: {Math.floor(eval(item.wind.speed) * 5)} km/hr{" "}
                         </h3>
                       </div>
                     </Col>

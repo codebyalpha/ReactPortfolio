@@ -23,7 +23,7 @@ function Project() {
     {
       id: 2,
       icon: weatherimg,
-      languages: ["React with Typescript", "CSS"],
+      languages: ["React with Typescript", "CSS", "Fetch API"],
       component: <Weather />,
       name: "Weather",
     },
@@ -34,8 +34,8 @@ function Project() {
   }
 
   const scrollPage = () => {
-    window.scrollTo(0, 510);
     setProject(true);
+    window.scrollTo(0, 510);
   };
 
   return (
@@ -54,7 +54,12 @@ function Project() {
                   })}
                 </Col>
               </Row>
-              <h2 style={{ textAlign: "center" }}>{`${item.name}`}</h2>
+              <h2
+                style={{
+                  textAlign: "center",
+                  color: "var(--primary)",
+                }}
+              >{`${item.name}`}</h2>
               <Row className="viewproject">
                 <Link to={"/project/" + item.name} onClick={scrollPage}>
                   <button>View</button>

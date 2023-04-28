@@ -21,7 +21,6 @@
 .homeintro .iconify {
   font-size: 40px;
   color: var(--primary);
-  /* transform: rotate(0 deg); */
   animation: hello 2s linear 2s infinite normal;
   transform-origin: bottom right;
   margin: 0 10px;
@@ -165,6 +164,25 @@
 
 .btn {
   margin-top: 10px;
+}
+
+.DownloadBtn {
+  padding: 8px 15px;
+  font-size: 20px;
+  color: var(--primary);
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  position: relative;
+  overflow: visible;
+}
+
+.DownloadBtn::before {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  height: 5px;
+  background-color: red;
+  width: 20px;
 }
 
 @media screen and (max-width: 667px) {
